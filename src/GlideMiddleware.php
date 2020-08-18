@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Slince\Glide;
+namespace Love\Glide;
 
 use League\Glide\Server;
 use League\Glide\ServerFactory;
@@ -59,7 +59,7 @@ class GlideMiddleware
     {
         $uri = urldecode(request()->pathinfo());
         parse_str($request->query(), $this->query);
-        
+
         if (!preg_match("#^{$this->options['baseUrl']}#", '/' . $uri)) {
             return $next($request);
         }

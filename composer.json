@@ -6,8 +6,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Slince",
-            "email": "taosikai@yeah.net"
+            "name": "心情love",
+            "email": "myhsj@qq.com"
         }
     ],
     "require": {
@@ -21,12 +21,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Slince\\Glide\\": "src"
+            "Love\\Glide\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Slince\\Glide\\Test\\": "tests"
+            "Love\\Glide\\Test\\": "tests"
         }
     }
 }

@@ -14,16 +14,16 @@
 执行下面命令安装:
 
 ```bash
-$ composer require slince/think-glide
+$ composer require love-dj/think-glide
 ```
 
 ## Usage
 
 ### Quick start
 
-由于从 ThinkPHP 5.1.6 开始添加了中间件的功能，所以在
+由于从 ThinkPHP 6.0 开始添加了中间件的功能，所以在
  
-- ThinkPHP 5.1.6 及以上版本使用 middleware 注册：
+- ThinkPHP 6.0 及以上版本使用 middleware 注册：
 
     打开 `application/middleware.php` 文件（如果不存在创建即可），注册 middleware：
     

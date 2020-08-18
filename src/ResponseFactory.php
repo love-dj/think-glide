@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Slince\Glide;
+namespace Love\Glide;
 
 use League\Flysystem\FilesystemInterface;
 use League\Glide\Responses\ResponseFactoryInterface;
@@ -28,11 +28,11 @@ class ResponseFactory implements ResponseFactoryInterface
      */
     public function create(FilesystemInterface $cache, $path)
     {
-        $contentType = $cache->getMimetype($path);
+        $contentType   = $cache->getMimetype($path);
         $contentLength = $cache->getSize($path);
         return response(stream_get_contents($cache->readStream($path)), 200, [
-            'Content-Type' => $contentType,
-            'Content-Length' => $contentLength
+            'Content-Type'   => $contentType,
+            'Content-Length' => $contentLength,
         ]);
     }
 }
