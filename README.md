@@ -14,7 +14,7 @@
 执行下面命令安装:
 
 ```bash
-$ composer require love-dj/think-glide
+$ composer require love-dj/think-glide dev-master
 ```
 
 ## Usage
