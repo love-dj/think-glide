@@ -38,26 +38,6 @@ $ composer require love-dj/think-glide dev-master
     ```
     
     这种方式比较简单，也是推荐的方式；
-
-- ThinkPHP 5.1.0 以上 5.1.6 以下版本：
-
-    不支持middleware，所以启用过程要复杂一点，我们用下面方式来妥协：
-    
-    ```php
-    // 在 /route/route.php 注册下面路由
-    Route::get('images/:file', 'index/handleImageRequest');
-    
-    //在控制器 index 里创建action
-    public function handleImageRequest()
-    {
-        $middleware = \Love\Glide\GlideMiddleware::factory([
-            'source' => App::getRootPath() . '/img',
-        ]);
-        
-        return $middleware(app('request'), function(){
-            return app('response');
-        });
-    }
     ```
 
 `source` 是你本地图片文件夹的位置，假设该目录下有图片 `user.jpg`, 打开浏览器访问下面链接：
