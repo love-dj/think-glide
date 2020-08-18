@@ -31,7 +31,7 @@ $ composer require love-dj/think-glide dev-master
     return [
         //...
     
-        \Slince\Glide\GlideMiddleware::factory([
+        \Love\Glide\GlideMiddleware::factory([
             'source' => __DIR__ . '/../img',
         ])
     ];
@@ -50,7 +50,7 @@ $ composer require love-dj/think-glide dev-master
     //在控制器 index 里创建action
     public function handleImageRequest()
     {
-        $middleware = \Slince\Glide\GlideMiddleware::factory([
+        $middleware = \Love\Glide\GlideMiddleware::factory([
             'source' => App::getRootPath() . '/img',
         ]);
         
@@ -84,7 +84,7 @@ http://youdomain.com/images/user.jpg?w=100&h=100
 `signKey` 进行校验，
 
 ```php
-\Slince\Glide\GlideMiddleware::factory([
+\Love\Glide\GlideMiddleware::factory([
     'source' => __DIR__ . '/../img',
     'signKey' => 'v-LK4WCdhcfcc%jt*VC2cj%nVpu+xQKvLUA%H86kRVk_4bgG8&CWM#k*'
 ])
@@ -103,7 +103,7 @@ echo app('glide.url_builder')->getUrl('user.jpg', ['w' => 100, 'h' => 100]);
 如果用户访问了一张不存在的图片或者没有进行安全校验，系统会抛出异常，你可以通过 `onException` 进行替换默认行为：
 
 ```php
-\Slince\Glide\GlideMiddleware::factory([
+\Love\Glide\GlideMiddleware::factory([
     'source' => __DIR__ . '/../img',
     'signKey' => 'v-LK4WCdhcfcc%jt*VC2cj%nVpu+xQKvLUA%H86kRVk_4bgG8&CWM#k*'，
     'onException' => function(\Exception $exception, $request, $server){
@@ -111,7 +111,7 @@ echo app('glide.url_builder')->getUrl('user.jpg', ['w' => 100, 'h' => 100]);
         if ($exception instanceof \League\Glide\Signatures\SignatureException) {
             $response = new Response('签名错误', 403);
         } else {
-            $response = new Response(sprintf('你访问的资源 "%s" 不存在', $request->path()), 404);
+            $response = new Response(sprintf('你访问的资源 "%s" 不存在', $request->pathinfo()), 404);
         }
         
         return $response;
