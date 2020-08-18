@@ -1,5 +1,5 @@
 {
-    "name": "slince/think-glide",
+    "name": "love-dj/think-glide",
     "description": "ThinkPHP adapter for using Glide image manipulation library",
     "type": "library",
     "keywords": ["thinkphp", "glide", "think-glide", "thinkphp-glide"],
