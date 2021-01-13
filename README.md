@@ -88,7 +88,7 @@ echo app('glide.url_builder')->getUrl('user.jpg', ['w' => 100, 'h' => 100]);
     'signKey' => 'v-LK4WCdhcfcc%jt*VC2cj%nVpu+xQKvLUA%H86kRVk_4bgG8&CWM#k*'，
     'onException' => function(\Exception $exception, $request, $server){
     
-        if ($exception instanceof \League\Glide\Signatures\SignatureException) {
+        if ($exception instanceof \Love\Glide\Signatures\SignatureException) {
             $response = new Response('签名错误', 403);
         } else {
             $response = new Response(sprintf('你访问的资源 "%s" 不存在', $request->pathinfo()), 404);
@@ -97,6 +97,19 @@ echo app('glide.url_builder')->getUrl('user.jpg', ['w' => 100, 'h' => 100]);
         return $response;
     }
 ])
+
+\Love\Glide\GlideMiddleware::factory([
+        'source'      => app()->getRootPath() . 'uploads',
+        'baseUrl'     => '/images',
+        'onException' => function (\Exception $exception, $request, $server) {
+            if ($exception instanceof \Love\Glide\Signatures\SignatureException) {
+                $response = response('签名错误', 403);
+            } else {
+                $response = response(sprintf('你访问的资源 "%s" 不存在', $request->pathinfo()), 404);
+            }
+            return $response;
+        },
+    ]),
 ```
 
 注意该闭包必须返回一个 `think\Response` 实例；
