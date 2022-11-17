@@ -14,12 +14,12 @@ class GlideMiddleware
     /**
      * @var array
      */
-    protected array $options = [];
+    protected $options = [];
 
     /**
      * @var array
      */
-    protected array $query = [];
+    protected $query = [];
 
     public function __construct(array $options = [])
     {
@@ -81,7 +81,7 @@ class GlideMiddleware
         $modifiedTime = null;
         if ($this->options['cacheTime']) {
             $modifiedTime = $server->getSource()
-                ->lastModified($server->getSourcePath($request->pathinfo()));
+                ->getTimestamp($server->getSourcePath($request->pathinfo()));
             $response = $this->applyModified($modifiedTime, $request);
             if (false !== $response) {
                 return $response;
