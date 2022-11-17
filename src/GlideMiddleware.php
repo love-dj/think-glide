@@ -14,12 +14,12 @@ class GlideMiddleware
     /**
      * @var array
      */
-    protected array $options;
+    protected array $options = [];
 
     /**
      * @var array
      */
-    protected array $query;
+    protected array $query = [];
 
     public function __construct(array $options = [])
     {
