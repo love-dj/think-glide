@@ -1,0 +1,31 @@
+{
+    "name": "love-dj/think-glide",
+    "description": "ThinkPHP adapter for using Glide image manipulation library",
+    "type": "library",
+    "keywords": ["thinkphp", "glide", "think-glide", "thinkphp-glide"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "心情love",
+            "email": "myhsj@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0",
+        "topthink/framework": "^6.0",
+        "league/glide": "^2.2",
+        "symfony/options-resolver": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "think\\": "src"
+        }
+    },
+    "extra": {
+        "think": {
+            "config":{
+                "glide": "config/config.php"
+            }
+        }
+    }
+}
