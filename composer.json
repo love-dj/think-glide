@@ -11,9 +11,9 @@
         }
     ],
     "require": {
-        "php": ">=7.1.0",
-        "topthink/framework": "^6.0",
-        "league/glide": "^1.7",
+        "php": ">=8.0.0",
+        "topthink/framework": "^8.0",
+        "league/glide": "^3.x-dev",
         "symfony/options-resolver": "^5.4"
     },
     "autoload": {
