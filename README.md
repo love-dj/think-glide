@@ -1,7 +1,7 @@
-# ThinkPHP6+ 图片动态裁剪缩放库
+# ThinkPHP8+ 图片动态裁剪缩放库
 
 [Glide](https://github.com/thephpleague/glide) 是一个可以帮助你根据指定参数动态的生成图片内容给浏览器的图片操作库，从而实现
-图片动态裁剪，打水印等，本库对 Glide 进行了一些友好的包装与扩展，屏蔽了原生库的一些底层抽象从而使得 ThinkPHP 用户可以在 ThinkPHP6 项目中
+图片动态裁剪，打水印等，本库对 Glide 进行了一些友好的包装与扩展，屏蔽了原生库的一些底层抽象从而使得 ThinkPHP 用户可以在 ThinkPHP8 项目中
 更好的添加图片的动态裁剪功能。
 
 ## Installation
@@ -16,7 +16,7 @@ $ composer require love-dj/think-glide
 
 ### Quick start
 
-- 要求php7.1/ThinkPHP6 及以上版本使用 middleware 注册：
+- 要求php8.0/ThinkPHP8 及以上版本使用 middleware 注册：
 
   打开 `app/middleware.php` 文件（如果不存在创建即可），注册 middleware：
 
@@ -90,7 +90,7 @@ return [
 
 不止支持裁剪，glide还支持其它操作，只要传递对应参数即可，参考这里查看支持的参数：
 
-[http://glide.thephpleague.com/1.0/api/quick-reference/](http://glide.thephpleague.com/1.0/api/quick-reference/)
+[http://glide.thephpleague.com/2.0/api/quick-reference/](http://glide.thephpleague.com/1.0/api/quick-reference/)
 
 ## License
 
